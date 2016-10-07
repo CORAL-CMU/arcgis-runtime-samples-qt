@@ -31,7 +31,8 @@ using namespace Esri::ArcGISRuntime;
 
 Stretch_Renderer::Stretch_Renderer(QQuickItem* parent /* = nullptr */):
   QQuickItem(parent),
-  m_mapView(nullptr)
+  m_mapView(nullptr),
+  m_rasterLayer(nullptr)
 {
 }
 
