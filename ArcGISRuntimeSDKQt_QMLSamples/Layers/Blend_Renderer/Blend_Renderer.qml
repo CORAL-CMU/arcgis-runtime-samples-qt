@@ -85,8 +85,10 @@ Rectangle {
         // set raster function arguments
         var rasterArg1 = ArcGISRuntimeEnvironment.createObject("Raster", {path: dataPath + "/function/dem/gebco_08.tif"});
         var rasterArg2 = ArcGISRuntimeEnvironment.createObject("Raster", {path: dataPath + "/function/dem/gebco_08.tif"});
-        rasterFunction.arguments.setRaster("raster", rasterArg1);
-        rasterFunction.arguments.setRaster("raster", rasterArg2);
+        if (rasterFunction) {
+            rasterFunction.arguments.setRaster("raster", rasterArg1);
+            rasterFunction.arguments.setRaster("raster", rasterArg2);
+        }
 
         return rasterFunction;
     }

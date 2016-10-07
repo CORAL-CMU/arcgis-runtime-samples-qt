@@ -70,8 +70,11 @@ RasterFunction* Raster_Function::createRasterFunction()
   // set the number of rasters required - 2 in this case
   Raster* rasterArg1 = new Raster(m_dataPath + "/function/dem/gebco_08.tif");
   Raster* rasterArg2 = new Raster(m_dataPath + "/function/dem/gebco_08.tif");
-  rasterFunction->arguments()->setRaster("raster", rasterArg1);
-  rasterFunction->arguments()->setRaster("raster", rasterArg2);
+  if (rasterFunction)
+  {
+    rasterFunction->arguments()->setRaster("raster", rasterArg1);
+    rasterFunction->arguments()->setRaster("raster", rasterArg2);
+  }
 
   return rasterFunction;
 }
