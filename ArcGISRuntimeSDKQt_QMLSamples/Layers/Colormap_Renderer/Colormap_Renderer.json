@@ -1,0 +1,6 @@
+{
+    "source" :  "Colormap_Renderer.qml",
+    "description" : "Colormap_Renderer.html",
+    "thumbnail" : "Colormap_Renderer.png",
+    "name" : "Colormap renderer"
+}

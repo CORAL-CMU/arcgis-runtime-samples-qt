@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Samples/Layers/RasterLayerMosaicDataset">
+        <file alias="sample.json">RasterLayerMosaicDataset.json</file>
+        <file>RasterLayerMosaicDataset.png</file>
+        <file>RasterLayerMosaicDataset.qml</file>
+        <file>RasterLayerMosaicDataset.html</file>
+    </qresource>
+</RCC>

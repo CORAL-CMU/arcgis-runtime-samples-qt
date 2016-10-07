@@ -1,0 +1,6 @@
+{
+    "source" :  "RasterLayerMosaicDataset.qml",
+    "description" : "RasterLayerMosaicDataset.html",
+    "thumbnail" : "RasterLayerMosaicDataset.png",
+    "name" : "Raster layer (mosaic dataset)"
+}

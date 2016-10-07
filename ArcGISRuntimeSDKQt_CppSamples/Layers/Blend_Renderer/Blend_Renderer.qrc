@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/Samples/Layers/Blend_Renderer">
+        <file alias="sample.json">Blend_Renderer.json</file>
+        <file>Blend_Renderer.png</file>
+        <file>Blend_Renderer.qml</file>
+		<file>Blend_Renderer.h</file>
+		<file>Blend_Renderer.cpp</file>
+        <file>Blend_Renderer.html</file>
+    </qresource>
+</RCC>
