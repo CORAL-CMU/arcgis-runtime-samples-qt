@@ -69,8 +69,9 @@ RasterFunction* Blend_Renderer::createRasterFunction()
   RasterFunction* rasterFunction = new RasterFunction(m_dataPath + "/json/color.json");
 
   // set the number of rasters required - 2 in this case
-  Raster* rasterArg1 = new Raster(m_dataPath + "/function/dem/gebco_08.tif");
-  Raster* rasterArg2 = new Raster(m_dataPath + "/function/dem/gebco_08.tif");
+  Raster* rasterArg1 = new Raster(m_dataPath + "/renderer/imgn23w160_13.tif");
+  Raster* rasterArg2 = new Raster(m_dataPath + "/renderer/imgn23w160_13.tif");
+
   if (rasterFunction)
   {
     rasterFunction->arguments()->setRaster("raster", rasterArg1);
@@ -92,11 +93,19 @@ void Blend_Renderer::applyBlendRenderer()
   // create parameters
   Raster* elevationSource = new Raster(m_dataPath + "/renderer/imgn23w160_13.tif", this);
   double altitude(45.0);
-  double azimuth(45.0);
+  double azimuth(315.0);
   double zFactor(0.000015);
+  ColorRamp* colorRamp = ColorRamp::create(PresetColorRampType::DemScreen, 500);
+
+  SlopeType slopeType = SlopeType::Scaled;
+  int pixelFactor =  1;
+  int pixelPower =  1;
+  int outputBitDepth =  8;
 
   // create blend renderer
-  BlendRenderer* blendRenderer = new BlendRenderer(elevationSource, altitude, azimuth, zFactor, this);
+  BlendRenderer* blendRenderer = new BlendRenderer(elevationSource, QList<double>() << 15.0 << 15.0 << 15.0, QList<double>() << 250.0 << 250.0 << 250.0,QList<double>() ,QList<double>() ,
+                                                   QList<double>(), QList<double>(), colorRamp, altitude, azimuth, zFactor, slopeType, pixelFactor,
+                                                   pixelPower, outputBitDepth, this);
 
   // apply to layer
   m_rasterLayer->setRenderer(blendRenderer);
