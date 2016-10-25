@@ -39,12 +39,15 @@ Rectangle {
         elevationRaster: Raster {
             path: dataPath + "/renderer/imgn23w160_13.tif"
         }
+        colorRamp: ColorRampDemScreen{
+            size: 500
+        }
         outputMinValues: [15.0]
         outputMaxValues: [250.0]
         altitude: 45
         azimuth: 315
         zFactor: 0.000015
-        slopeType: Enums.SlopeTypeNone
+        slopeType: Enums.SlopeTypeScaled
         pixelSizeFactor: 1
         pixelSizePower: 1
         outputBitDepth: 8
@@ -83,8 +86,8 @@ Rectangle {
         var rasterFunction = ArcGISRuntimeEnvironment.createObject("RasterFunction", {path: dataPath + "/json/color.json"});
 
         // set raster function arguments
-        var rasterArg1 = ArcGISRuntimeEnvironment.createObject("Raster", {path: dataPath + "/function/dem/gebco_08.tif"});
-        var rasterArg2 = ArcGISRuntimeEnvironment.createObject("Raster", {path: dataPath + "/function/dem/gebco_08.tif"});
+        var rasterArg1 = ArcGISRuntimeEnvironment.createObject("Raster", {path: dataPath + "/renderer/imgn23w160_13.tif"});
+        var rasterArg2 = ArcGISRuntimeEnvironment.createObject("Raster", {path: dataPath + "/renderer/imgn23w160_13.tif"});
         if (rasterFunction) {
             rasterFunction.arguments.setRaster("raster", rasterArg1);
             rasterFunction.arguments.setRaster("raster", rasterArg2);
