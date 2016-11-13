@@ -64,7 +64,7 @@ void RGB_Renderer::applyRgbRenderer1()
   QList<int> bandIndexes = QList<int>() << 2 << 1 << 0;
   Raster* panchromaticRaster = new Raster(m_dataPath + "/renderer/rgb/po_311944_pan_0000001.tif", this);
   QList<double> weights = QList<double>() << 0.1 << 0.5 << 0.4 << 0.3;
-  RGBRenderer* rgbRenderer = new RGBRenderer(bandIndexes, panchromaticRaster, PansharpenType::Mean, weights, this);
+  RGBRenderer* rgbRenderer = new RGBRenderer(StretchParameters(), bandIndexes, PansharpenType::Mean, panchromaticRaster, weights, this);
 
   // apply  renderer to raster layer
   m_rasterLayer->setRenderer(rgbRenderer);
@@ -76,7 +76,7 @@ void RGB_Renderer::applyRgbRenderer2()
   QList<int> bandIndexes = QList<int>() << 1 << 2 << 0;
   Raster* panchromaticRaster = nullptr;
   QList<double> weights = QList<double>();
-  RGBRenderer* rgbRenderer = new RGBRenderer(bandIndexes, panchromaticRaster, PansharpenType::None, weights, this);
+  RGBRenderer* rgbRenderer = new RGBRenderer(StretchParameters(), bandIndexes, PansharpenType::None, panchromaticRaster, weights, this);
 
   // apply  renderer to raster layer
   m_rasterLayer->setRenderer(rgbRenderer);
