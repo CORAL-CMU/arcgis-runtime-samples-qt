@@ -49,7 +49,7 @@ Rectangle {
         id: rgbRenderer1
         bandIndexes: [2, 1, 0]
         pansharpenType: Enums.PansharpenTypeMean
-        panchromaticRaster: Raster {
+        Raster {
             path: dataPath + "/renderer/rgb/po_311944_pan_0000001.tif"
         }
         weights: [0.1, 0.5, 0.4, 0.3]

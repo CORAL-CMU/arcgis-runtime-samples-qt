@@ -49,7 +49,7 @@ Rectangle {
     StretchRenderer {
         id: stretchRendererDemLight
 
-        stretchParameters: PercentClipStretchParameters {
+        PercentClipStretchParameters {
             min: 2
             max: 2
         }
@@ -61,7 +61,7 @@ Rectangle {
     StretchRenderer {
         id: stretchRendererDemScreen
 
-        stretchParameters: PercentClipStretchParameters {
+        PercentClipStretchParameters {
             min: 2
             max: 2
         }
@@ -73,7 +73,7 @@ Rectangle {
     StretchRenderer {
         id: stretchRendererElevation
 
-        stretchParameters: PercentClipStretchParameters {
+        PercentClipStretchParameters {
             min: 2
             max: 2
         }

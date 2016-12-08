@@ -36,10 +36,10 @@ Rectangle {
 
     BlendRenderer {
         id: blendRenderer
-        elevationRaster: Raster {
+        Raster {
             path: dataPath + "/renderer/imgn23w160_13.tif"
         }
-        colorRamp: ColorRampDemScreen{
+        ColorRampDemScreen{
             size: 500
         }
         outputMinValues: [15.0]
